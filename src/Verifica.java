@@ -1,21 +1,21 @@
 import java.io.IOException;
-import java.util.Scanner;
 
 public class Verifica {
-    public static String verifica() throws IOException {
-        String palavra = Random.escolhePalavra();
-        String tentativa = Input.userInput();
+    public static String verifica(String palavra) throws IOException {
+        
+        String tentativa = "";
         int tentativas = QuantidadeTentativas.qntTentativas();
 
-        while(!tentativa.equals(palavra) && tentativas > 0) {
-            if (tentativa.length() != 5) {                
+        while (!tentativa.equals(palavra) && tentativas > 0) {
+             tentativa = Input.userInput();
+            if (tentativa.length() != 5) {
+                System.out.println("A Palavra tem que conter 5 letras");
                 continue;
             }
-            for(int i = 0; i < palavra.length(); i++) {
+            for (int i = 0; i < 5; i++) {
                 boolean estaCerto = false;
-                for(int j = 0; j < palavra.length(); j++) {
-                    if(tentativa.charAt(i) == palavra.charAt(i)) {
-                        tentativa = "C";
+                for (int j = 0; j < 5; j++) {
+                    if (tentativa.charAt(i) == palavra.charAt(i)) {
                         System.out.print("C");
                         estaCerto = true;
 
@@ -32,7 +32,10 @@ public class Verifica {
                     System.out.print("X");
                 }
             }
+            tentativas--;
         }
         return tentativa;
+
     }
+
 }

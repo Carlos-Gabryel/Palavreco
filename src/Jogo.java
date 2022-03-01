@@ -2,10 +2,11 @@ import java.io.IOException;
 
 public class Jogo {
     public static void main(String[] args) throws IOException {
-       String tentativa = Input.userInput();
-        String teste = Verifica.verifica();
-        System.out.println(teste);
-        System.out.println(tentativa);
+        
+        System.out.println("Bem vindo(a) ao PALAVRECO !!!");
+        Verifica.verifica(Random.escolhePalavra());
+        if(QuantidadeTentativas.qntTentativas() <= 0);
+        System.out.println("\nNão consegue né? A palavra era: " + );
     }
-    
+
 }

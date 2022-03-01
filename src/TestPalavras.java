@@ -18,7 +18,7 @@ public class TestPalavras {
 
         String[] tempsArray = temps.toArray(new String[0]);
 
-        for(int i = 0; i < tempsArray.length; i++) {
+        for(int i = 1; i < tempsArray.length; i++) {
             System.out.println(tempsArray[i]);
         }
     }
